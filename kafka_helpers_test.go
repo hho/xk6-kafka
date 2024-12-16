@@ -95,7 +95,7 @@ func (k *kafkaTest) getCounterMetricsValues() map[string]float64 {
 
 	for _, sampleContainer := range metrics.GetBufferedSamples(k.samples) {
 		for _, sample := range sampleContainer.GetSamples() {
-			if sample.Metric.Type == metrics.Counter {
+			if sample.Metric.Type == metrics.Counter || sample.Metric.Type == metrics.Gauge {
 				metricsValues[sample.Metric.Name] = sample.Value
 			}
 		}

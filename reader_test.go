@@ -171,13 +171,13 @@ func TestConsume(t *testing.T) {
 	assert.Equal(t, 0.0, metricsValues[test.module.metrics.ReaderWaitTime.Name])
 	assert.Equal(t, 1.0, metricsValues[test.module.metrics.ReaderFetchSize.Name])
 	assert.Equal(t, 10.0, metricsValues[test.module.metrics.ReaderFetchBytes.Name])
-	assert.Equal(t, 0.0, metricsValues[test.module.metrics.ReaderOffset.Name])
+	assert.Equal(t, 1.0, metricsValues[test.module.metrics.ReaderOffset.Name])
 	assert.Equal(t, 0.0, metricsValues[test.module.metrics.ReaderLag.Name])
-	assert.Equal(t, 0.0, metricsValues[test.module.metrics.ReaderMinBytes.Name])
-	assert.Equal(t, 0.0, metricsValues[test.module.metrics.ReaderMaxBytes.Name])
-	assert.Equal(t, 0.0, metricsValues[test.module.metrics.ReaderMaxWait.Name])
+	assert.Equal(t, 1.0, metricsValues[test.module.metrics.ReaderMinBytes.Name])
+	assert.Equal(t, 1000000.0, metricsValues[test.module.metrics.ReaderMaxBytes.Name])
+	assert.Equal(t, 10000.0, metricsValues[test.module.metrics.ReaderMaxWait.Name])
 	assert.Equal(t, 0.0, metricsValues[test.module.metrics.ReaderQueueLength.Name])
-	assert.Equal(t, 0.0, metricsValues[test.module.metrics.ReaderQueueCapacity.Name])
+	assert.Equal(t, 100.0, metricsValues[test.module.metrics.ReaderQueueCapacity.Name])
 }
 
 // TestConsumeWithoutKey tests the consume function without a key.
